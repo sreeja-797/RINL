@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>RINL Dashboard</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2f2f74, #2a9fd6);
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    header {
+      background-color: rgba(255, 255, 255, 0.08);
+      text-align: center;
+      padding: 50px 20px 30px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 38px;
+      font-weight: 700;
+      text-shadow: 1px 1px 4px #000;
+      color: #fff;
+    }
+
+    .dashboard {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 40px;
+      max-width: 1100px;
+      margin: 60px auto;
+      padding: 0 30px;
+    }
+
+    .card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 60px 20px 30px;
+      text-align: center;
+      color: #2f2f74;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+      transition: all 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+    }
+
+    .card i {
+      font-size: 50px;
+      margin-bottom: 15px;
+      color: #6a1b9a;
+      transition: transform 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 18px 35px rgba(0, 0, 0, 0.4);
+    }
+
+    .card:hover i {
+      transform: scale(1.2);
+    }
+
+    .card-title {
+      font-size: 20px;
+      font-weight: 600;
+      color: #2f2f74;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 26px;
+      }
+
+      .dashboard {
+        padding: 0 20px;
+        gap: 25px;
+      }
+
+      .card {
+        padding: 50px 15px 25px;
+      }
+
+      .card i {
+        font-size: 40px;
+      }
+
+      .card-title {
+        font-size: 18px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Delay Management Dashboard</h1>
+  </header>
+
+  <div class="dashboard">
+    <a href="delay.html" class="card">
+      <i class="fas fa-clock"></i>
+      <div class="card-title">Delay Entry</div>
+    </a>
+
+    <a href="report.html" class="card">
+      <i class="fas fa-file-alt"></i>
+      <div class="card-title">Delay Reports</div>
+    </a>
+  </div>
+
+</body>
+</html>

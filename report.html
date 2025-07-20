@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Delay Report | RINL</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #2f2f74, #2a9fd6);
+      color: #fff;
+      min-height: 100vh;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px 20px;
+      background-color: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 36px;
+      font-weight: 700;
+      text-shadow: 1px 1px 4px #000;
+    }
+
+    .container {
+      max-width: 600px;
+      background: #fff;
+      color: #2f2f74;
+      margin: 40px auto;
+      padding: 30px 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #2f2f74;
+      margin-bottom: 30px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 600;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 16px;
+    }
+
+
+    select {
+  width: 100%;
+  padding: 10px 12px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+
+    button {
+      background-color: #6a1b9a;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 8px;
+      width: 100%;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4a0072;
+    }
+
+    #report-container {
+      margin-top: 30px;
+      color: #000;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      padding: 10px;
+      border: 1px solid #999;
+      text-align: center;
+    }
+
+    th {
+      background-color: #eee;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+
+      h1 {
+        font-size: 26px;
+      }
+
+      h2 {
+        font-size: 22px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Delay Management System</h1>
+  </header>
+
+  <div class="container">
+    <h2>Generate Delay Report</h2>
+    <form action="/generate-report" method="POST">
+      <label for="shop_code">Shop Code</label>
+      <select name="shop_code" id="shop_code" required>
+  <option value="" disabled selected>Select Shop Code</option>
+  <option value="1">1</option>
+  <option value="2">2</option>
+  <option value="3">3</option>
+  <option value="4">4</option>
+  <option value="5">5</option>
+  <option value="6">6</option>
+  <option value="7">7</option>
+  <option value="8">8</option>
+  <option value="9">9</option>
+  <option value="10">10</option>
+  <option value="11">11</option>
+  <option value="14">14</option>
+  <option value="15">15</option>
+  <option value="16">16</option>
+  <option value="18">18</option>
+  <option value="19">19</option>
+  <option value="20">20</option>
+</select>
+
+    
+
+      <label for="startTime">Start Time</label>
+      <input type="datetime-local" name="startTime" id="startTime" required />
+
+      <label for="endTime">End Time</label>
+      <input type="datetime-local" name="endTime" id="endTime" required />
+
+      <button type="submit">Generate Report</button>
+    </form>
+
+    <div id="report-container">
+      <!-- Report will be displayed here after POST -->
+    </div>
+  </div>
+
+</body>
+</html>
